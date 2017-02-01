@@ -6,7 +6,7 @@ const port = 3000;
 const bodyParser = require('body-parser');
 const knex = require('./knex');
 const cookieParser = require('cookie-parser');
-app.set("view engine", "ejs");
+app.set("view engine", "pug");
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser());
 
@@ -22,14 +22,29 @@ app.get('/login', function(req, res) {
     res.render("../views/login");
 })
 
+//
+// app.get('/main', function(req, res){
+//   console.log(req);
+//   knex.select().from('events')
+//   .then(function(data){
+//     console.log(data);
+//     res.json(data);
+//   }).catch(function(err){
+//     console.log(err);
+//   })
+// })
 app.get('/main', function(req, res, next) {
-    if (!req.cookies.id) {
-        res.render("../views/login");
-    }
-    if (req.cookies.id) {
-        res.render('../views/main');
-    }
-})
+    knex('events').then(function(data) {
+        console.log(data);
+        if (req.cookies.id) {
+            res.render('../views/main', {data: data})
+        }else{
+        res.render('/login')
+        }
+    }).catch(function(err) {
+        console.log(err);
+    })
+});
 
 app.get('/createarticle', function(req, res) {
     res.render("../views/create-article");
@@ -38,7 +53,7 @@ app.get('/createarticle', function(req, res) {
 app.post('/main', function(req, res, next) { //login post request
     var body = req.body;
     var cookies = req.cookies.id;
-    console.log(body, "BODY");
+    console.log(body, " LOGIN POST body");
     knex('users').where({username: body.username, email: body.email, password: body.password}).catch(function(err) {
         next(new Error(err));
         console.log(err);
@@ -145,6 +160,18 @@ app.post("/addcomment/:id", function(req, res) {
 //     console.log(err);
 //   })
 // })
+
+// *** MAKE POST REQUEST HANDLES CREATE EVENT
+app.post('/newEvent', function(req, res) {
+    var body = req.body
+
+    knex('events').returning('*').insert({name: body.name, occupation: body.occupation, title: body.title, description: body.description, address: body.address}).then(function(data) {
+        console.log(data);
+        res.redirect("/main");
+    }).catch(function(err) {
+        console.log(err);
+    })
+})
 
 function mainBlogPost(articles, comments) {
     let newArray = []

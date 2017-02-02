@@ -1,0 +1,21 @@
+{
+  "name": "practiceblog",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Michael Liu <lium039@mgail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mikey084/capstone",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}

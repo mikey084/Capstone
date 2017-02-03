@@ -6,23 +6,25 @@ const port = 3000;
 const bodyParser = require('body-parser');
 const knex = require('./knex');
 const cookieParser = require('cookie-parser');
-app.set("view engine", "pug");
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser());
+var routes = require('./routes/index')
 
 var io = require('socket.io').listen(app.listen(port, function(){
   console.log("listening on MOFUKKKAAAA " + port);
 }))
 
-var server = require('http').createServer(app);
+// var server = require('http').createServer(app);
 
 app.use(express.static(__dirname + '/bower_components'));
-app.engine('pug', require('pug').__express);
 
 app.use(express.static(__dirname + '/public/javascripts'));
 
 
-
+app.get('/testing', function(req, res){
+  res.render('../views/index')
+})
 
 io.sockets.on('connection', function(socket){
   socket.emit('message', {message: 'welcome to test chat'});
@@ -33,7 +35,7 @@ io.sockets.on('connection', function(socket){
   })
 })
 
-
+app.use('/api/events', routes.events)
 
 
 
@@ -62,6 +64,7 @@ app.get('/login', function(req, res) {
 //   })
 // })
 app.get('/main', function(req, res, next) {
+    console.log(req.cookies, "Cookies exist!");
     knex('events').then(function(data) {
         console.log(data);
         if (req.cookies.id) {
@@ -80,7 +83,8 @@ app.get('/createarticle', function(req, res) {
 
 app.post('/main', function(req, res, next) { //login post request
     var body = req.body;
-    var cookies = req.cookies.id;
+    var cookies = req.cookies;
+    console.log(req.cookies, "REQUEST PRE KENX");
     console.log(body, " LOGIN POST body");
     knex('users').where({username: body.username, email: body.email, password: body.password}).catch(function(err) {
         next(new Error(err));
@@ -90,9 +94,10 @@ app.post('/main', function(req, res, next) { //login post request
         if (data.length === 0) {
             return res.redirect("/createaccount");
         }
-        if (!cookies) {
-            console.log(data[0], "  I AM DATA 0");
+        if (!cookies.id) {
             res.cookie('id', data[0].id,  {httpOnly: true});
+            res.cookie('name', data[0].username, {httpOnly: true});
+            // res.name('name', data[0].username, {httpOnly:true});
             res.redirect("/main");
         } else {
             res.redirect('/main');
@@ -188,3 +193,5 @@ function mainBlogPost(articles, comments) {
     newArray.push(comments);
     return newArray;
 }
+
+module.exports = app;

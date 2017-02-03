@@ -5,18 +5,18 @@ window.onload = function(){
   var field = document.getElementById('field');
   var sendButton = document.getElementById('send');
   var content = document.getElementById('content');
-
+  var userName = document.getElementById('name')
+  var html = "";
+  var i = 0;
   socket.on('message', function(data){
 
     if (data.message){
-      console.log(data.message);
-      console.log(data.username, "USER NAME");
+      console.log(data, "data");
+      console.log(data.message, "chat js");
       messages.push(data.message);
-      var html = "";
-      for (var i = 0; i < messages.length; i++){
-        html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
-        html += messages[i] + '<br />';
-      }
+      html += '<b>' + (data.username ? data.username : 'Server') + ': </b>';
+      html += messages[i] + '<br />';
+      i++;
       content.innerHTML = html;
       content.scrollTop = content.scrollHeight;
     }else{
@@ -25,9 +25,12 @@ window.onload = function(){
   })
 
   function sendMessage(){
+    var user = userName.value;
     var text = field.value;
-    socket.emit('send',{message:text});
+    socket.emit('send',{message:text, username: user});
+    field.value = "";
   }
+
   sendButton.onclick = function(){
     if (name.value === ""){
       alert("Please type your name");

@@ -2,16 +2,86 @@
 <html>
   <head>
     <title>Real time web chat</title>
-    <link rel="stylesheet" href="./style">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="//developer.appear.in/scripts/appearin-sdk.0.0.4.min.js"></script>
     <script src="/chat.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-  </head>
-  <body>
-    <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;"></div>
-    <div class="controls">Name:
-      <input id="name" style="width:350px;" type="text" name="username">Messages:
-      <input id="field" style="width:350px;" type="text" name="message">
-      <input id="send" type="button" value="send">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta content="stuff, to, help, search, engines, not" name="keywords">
+    <meta content="What this page is about." name="description">
+    <meta content="Display Webcam Stream" name="title">
+
+    </head>
+      <body style ='background-color: cornsilk;'>
+        <nav class="teal" role="navigation">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="/main" class="brand-logo">Home</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
+        </nav>
+        <div class = 'row'>
+          <div class = 'col s6'>
+          <div name = "video-room" id = "video-box">
+            <iframe src="https://appear.in/mikey084" width="800" height="620" frameborder="0" style = 'margin-top: 25px;'>
+            </iframe>
+          </div>
+          </div>
+          <div  id = "chatbox-container" class = 'col s6' style = "margin-top: 150px;">
+            <div name = "chatbox" >
+            <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;">
+            </div>
+            </div>
+            <div class="controls">Name:
+              <input id="name" style="width:250px;" type="text" name="username">Messages:
+              <input id="field" style="width:250px;" type="text" name="message">
+              <input id="send" type="button" value="send" class ="waves-effect waves-light btn" style= "margin-bottom:25px;">
+            </div>
+          </div>
+        </div>
+    </body>
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <!-- <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul> -->
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <!-- <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul> -->
+        </div>
+      </div>
     </div>
-  </body>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
 </html>

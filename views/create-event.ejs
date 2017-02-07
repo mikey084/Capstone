@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create Event</title>
   </head>
-  <body>
+  <body style = 'background-color: linen;'>
+    <nav class="teal" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/main">Home Page</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <div style = 'width: 500px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px;'>
     <form action="newEvent" method="post">
       <input type="text" name="name" placeholder="name">
       <input type="text" name="occupation" placeholder="occupation">
       <input type="text" name="title" placeholder="title">
       <input type="text" name="description" placeholder="description">
       <input type="text" name="address" placeholder="address">
-      <input type="submit">
-    </form>
+      <button type="submit" name="button" class ="waves-effect waves-light btn">Submit</button>    </form>
+    </div>
   </body>
 </html>

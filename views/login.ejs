@@ -9,26 +9,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
   </head>
-  <body>
-    <nav class="blue" role="navigation">
+  <body style = 'background-color: linen;'>
+    <nav class="teal" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Navbar Link</a></li>
+          <li><a href="/users/createaccount">Create Account</a></li>
         </ul>
-
         <ul id="nav-mobile" class="side-nav">
           <li><a href="#">Navbar Link</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
-    <h1>This is the Login PAGE</h1><a href="http://localhost:3000/createaccount">Create Account</a>
+    <h1>This is the Login PAGE</h1>
+    <!-- <a href="http://localhost:3000/users/createaccount">Create Account</a> -->
+    <div style = 'width: 500px; height: 400px; margin-left: auto; margin-right: auto;'>
     <form action="main" method="post">
       <input type="text" placeholder="username" name="username">
       <input type="text" placeholder="email" name="email">
       <input type="text" placeholder="password" name="password">
-      <input type="submit">
-    </form>
+      <button type="submit" name="button" class ="waves-effect waves-light btn">Submit</button>    </form>
+      </div>
   </body>
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Welcome!</h5>
+          <p class="grey-text text-lighten-4">Share your experiences and knowledge with this networking platform. It's easy to connect if you have skills to share sign up create a session and begin!</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <!-- <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul> -->
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <!-- <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Mikey Liu</a>
+      </div>
+    </div>
+  </footer>
 </html>

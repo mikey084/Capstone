@@ -10,12 +10,24 @@ class Event {
     this.address = config.address;
   }
   render(){
-    var body = document.getElementById('body');
+    // <iframe src="https://appear.in/mikey084" width="800" height="640" frameborder="0"></iframe>
+
+    var biggestContainerDiv = document.getElementById('containerDiv');
     var containerDiv = document.createElement('div')
     containerDiv.setAttribute('class', 'card');
-    containerDiv.setAttribute('style', 'width:450px;height:250px')
+    containerDiv.setAttribute('style', 'width:450px;height:250px; background-color: cornsilk;')
     var imgTag = document.createElement('img');
     var divImg = document.createElement('div');
+    var videoBox = document.getElementById('video-box');
+    //creating Iframe tag
+    // var iFrameTag = document.createElement('iframe');
+    // console.log(iFrameTag, "I am i frameTAg");
+    // console.log(videoBox, "I am i so boxy");
+    // iFrameTag.setAttribute('src', "https://appear/in/mikey084" + "/" + this.id);
+    // iFrameTag.setAttribute('style', 'width:800px; height: 640px;');
+    // iFrameTag.setAttribute('frameborder', "0");
+    // videoBox.appendChild(iFrameTag);
+
     // create card image
     imgTag.setAttribute('class', 'activator');
     imgTag.setAttribute('src', './dawg.jpeg')
@@ -31,11 +43,13 @@ class Event {
     var aTag = document.createElement('a')
     // sets title
     spanTag.innerHTML = this.name + "   " + this.occupation;
-
+    aTag.innerHTML = "Join Event"
     divContent.setAttribute('class', 'card-content')
     spanTag.setAttribute('class', 'card-title activator grey-text text-darken-4')
     iTag.setAttribute('class', "material-icons right");
-    aTag.setAttribute('href', "httpL//localhost/joinEvent");
+    console.log(this.id);
+    aTag.setAttribute('href', "events" + "/" + this.id.toString());
+
     pTag.appendChild(aTag);
     spanTag.appendChild(iTag);
     divContent.appendChild(spanTag)
@@ -62,9 +76,9 @@ class Event {
     containerDiv.appendChild(divContent);
     containerDiv.appendChild(divCardReveal);
 
-    body.appendChild(containerDiv);
+    biggestContainerDiv.appendChild(containerDiv);
 
-    return body;
+    return biggestContainerDiv;
 
   }
 }

@@ -2,6 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("events", function(table){
     table.increments('id');
+    table.string('imageurl').notNullable().defaultTo('');
     table.string('name').notNullable().defaultTo('');
     table.string('occupation').notNullable().defaultTo('')
     table.string('title').notNullable().defaultTo('');

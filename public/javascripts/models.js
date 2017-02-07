@@ -2,6 +2,7 @@
 
 class Event {
   constructor(config){
+    this.imageurl = config.imageurl;
     this.id = config.id
     this.name = config.name;
     this.occupation = config.occupation
@@ -30,7 +31,7 @@ class Event {
 
     // create card image
     imgTag.setAttribute('class', 'activator');
-    imgTag.setAttribute('src', './dawg.jpeg')
+    imgTag.setAttribute('src', this.imageurl)
     imgTag.setAttribute('style', 'width: 150px; height:100px' )
     divImg.setAttribute('class', 'card-image waves-effect waves-block waves-light');
 
@@ -65,6 +66,7 @@ class Event {
     spanReveal.innerHTML = this.title + ":"
     iTagReveal.setAttribute('style', 'width:30px;height30px;')
     divCardReveal.setAttribute('class', 'card-reveal');
+    divCardReveal.setAttribute('style', 'background-color: cornsilk;')
     spanReveal.setAttribute('class', 'card-title grey-text text-darken-4')
     iTagReveal.setAttribute('class', 'material-icons right')
 

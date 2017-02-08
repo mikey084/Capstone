@@ -19,5 +19,12 @@ footer {
   background-color: white;
 }
 #style-block{
-  background-image: url('http://cooldigital.photography/wp-content/uploads/2014/07/1200.jpg');
+  background-color: cornsilk;
+}
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }

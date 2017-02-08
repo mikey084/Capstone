@@ -3,6 +3,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
@@ -26,12 +28,12 @@
     <form action="/users/signup" method="post">
       <input type="text" placeholder="Username" name="username"/>
       <input type="text" placeholder="Email" name="email"/>
-      <input type="text" placeholder="Password" name="password"/>
+      <input type="password" placeholder="Password" name="password"/>
       <button type="submit" name="button" class ="waves-effect waves-light btn">Submit</button>
       <!-- <input type="submit"  /> -->
     </form>
   </div>
-  <footer class="page-footer teal">
+  <footer id = 'footer' class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

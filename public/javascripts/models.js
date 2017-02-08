@@ -57,17 +57,26 @@ class Event {
     var iTag = document.createElement('i');
     var pTag = document.createElement('p');
     var aTag = document.createElement('a')
+    var li1 = document.createElement('li');
+    var li2 = document.createElement('li');
     // sets title
-    spanTag.innerHTML = this.name + "   " + this.occupation + "      Time:  "  + this.time;
+    spanTag.innerHTML = this.name;
+    // + "   " + this.occupation + "      Time:  "  + this.time;
     aTag.innerHTML = "Join Event"
-    aTag.setAttribute('style', 'font-size: 25px;')
+    aTag.setAttribute('style', 'font-size: 20px;')
     divContent.setAttribute('class', 'card-content')
     spanTag.setAttribute('class', 'card-title activator grey-text text-darken-4')
     iTag.setAttribute('class', "material-icons right");
-    console.log(this.id);
     aTag.setAttribute('href', "events" + "/" + this.id.toString());
+    li1.setAttribute('style', 'list-style-type: none;')
+    li2.setAttribute('style', 'list-style-type: none;')
+
+    li1.innerHTML = "Occupation: " + this.occupation;
+    li2.innerHTML = this.time;
 
     pTag.appendChild(aTag);
+    spanTag.appendChild(li1);
+    spanTag.appendChild(li2);
     spanTag.appendChild(iTag);
     divContent.appendChild(spanTag)
     divContent.appendChild(pTag);

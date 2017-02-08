@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script src = '/models.js'> </script>
-    <script src = '/buildEvent.js'></script>
+    <script src = '/buildEventfiltered.js'></script>
     <link rel="stylesheet" href="/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
   <body id= "body">
     <nav>
       <div class="nav-wrapper" style = 'background-color: teal;'>
-        <a href="#" class="brand-logo">LEARN</a>
+        <a href="/main" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="http://localhost:3000/createevent">Create Event</a></li>
           <li><a href="http://localhost:3000/filtered">Today's Events</a></li>
@@ -31,10 +31,10 @@
     </div>
 
 
-      <div name= 'background-color-container' style = 'height: 100%; width: 100%;background-color: gainsboro'>
+      <div id = 'style-block'name= 'background-color-container' style = 'height: 700px; width: 100%;'>
 
 
-        <div id= "containerDiv" class = 'media-grid' style = "display:flex;flex-wrap:wrap;justify-content:space-between; position: relative; margin-left: 30px;" >
+        <div id= "containerDiv" class = 'media-grid' style = "display:flex;flex-wrap:wrap;justify-content:center;">
 
       </div>
       </div>

@@ -16,32 +16,32 @@
 
     </head>
       <body style ='background-color: cornsilk;'>
-        <nav class="teal" role="navigation">
-          <div class="nav-wrapper container">
-            <a id="logo-container" href="/main" class="brand-logo">Home</a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="#">Navbar Link</a></li>
+        <nav>
+          <div class="nav-wrapper" style = 'background-color: teal;'>
+            <a href="#" class="brand-logo">LEARN</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="http://localhost:3000/createevent">Create Event</a></li>
+              <li><a href="http://localhost:3000/filtered">Today's Events</a></li>
+              <li>  <form action="/users/logout" method="post">
+                  <input type="submit" name="" value="logout"  style = 'width: 150px; height: 50px; margin-bottom: 10px; border: none; background-color:teal;font-size: 20px;'>
+                </form></li>
             </ul>
-
-            <ul id="nav-mobile" class="side-nav">
-              <li><a href="#">Navbar Link</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
           </div>
         </nav>
+        <h1></h1>
         <div class = 'row'>
           <div class = 'col s6'>
-          <div name = "video-room" id = "video-box">
-            <iframe src="https://appear.in/mikey084" width="800" height="620" frameborder="0" style = 'margin-top: 25px;'>
+          <div name = "video-room" id = "video-box" style = 'margin-left: 50px;'>
+            <iframe src="https://appear.in/mikey084/<%=id%>" width="800" height="620" frameborder="0" style = 'margin-top: 25px;'>
             </iframe>
           </div>
           </div>
           <div  id = "chatbox-container" class = 'col s6' style = "margin-top: 150px;">
-            <div name = "chatbox" >
-            <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;">
+            <div name = "chatbox" id ='chatbox' >
+            <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;border-radius: 25px; font-size: 20px; padding: 20px;border:1px solid;border-color: rgba(0,0,0,.15); position:relative; ">
             </div>
             </div>
-            <div class="controls">Name:
+            <div class="controls" >Name:
               <input id="name" style="width:250px;" type="text" name="username">Messages:
               <input id="field" style="width:250px;" type="text" name="message">
               <input id="send" type="button" value="send" class ="waves-effect waves-light btn" style= "margin-bottom:25px;">
@@ -49,17 +49,17 @@
           </div>
         </div>
     </body>
-  <footer class="page-footer teal">
+  <footer class="page-footer teal" style = 'margin-top: 99px'>
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4"></p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text"></h5>
           <!-- <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
@@ -68,7 +68,7 @@
           </ul> -->
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text"></h5>
           <!-- <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>

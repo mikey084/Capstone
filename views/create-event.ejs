@@ -12,7 +12,7 @@
   <body style = 'background-color: linen;'>
     <nav class="teal" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <a id="logo-container" href="#" class="brand-logo">Create Your Event</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="/main">Home Page</a></li>
         </ul>
@@ -23,15 +23,19 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
-    <div style = 'width: 500px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px;'>
+    <div style = 'width: 500px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 60px;'>
     <form action="newEvent" method="post">
       <input type="text" name="imageurl" placeholder = "image url ">
       <input type="text" name="name" placeholder="name">
       <input type="text" name="occupation" placeholder="occupation">
       <input type="text" name="title" placeholder="title">
-      <input type="text" name="description" placeholder="description">
+      <label for="textarea">Description:</label>
+      <textarea type="text" name="description" placeholder="description" style = 'width: 350px; height:280px;'>
+      </textarea>
       <input type="text" name="address" placeholder="address">
-      <button type="submit" name="button" class ="waves-effect waves-light btn">Submit</button>    </form>
+      <input type="datetime-local" class="datepicker" name='date' style = 'font-size: 20px;'>
+      <button type="submit" name="button" class ="waves-effect waves-light btn">Submit</button>
+     </form>
     </div>
   </body>
 </html>

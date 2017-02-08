@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.string('title').notNullable().defaultTo('');
     table.text('description').notNullable().defaultTo('');
     table.string('address').notNullable().defaultTo('');
-
+    table.dateTime('datetime').notNullable();
   })
 };
 

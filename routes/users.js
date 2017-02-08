@@ -44,12 +44,13 @@ router.post('/main', function(req, res, next){
   }).then(function(data) {
       console.log(data, "knex data");
       if (data.length === 0) {
-          return res.redirect("/createaccount");
+          return res.redirect("/users/createaccount");
       }
       if (!cookies.id) {
           res.cookie('id', data[0].id,  {httpOnly: true});
           res.cookie('name', data[0].username, {httpOnly: true});
           // res.name('name', data[0].username, {httpOnly:true});
+
           res.redirect("/main");
       } else {
           res.redirect('/main');

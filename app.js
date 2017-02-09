@@ -1,5 +1,4 @@
 "use strict";
-
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -12,7 +11,7 @@ app.use(cookieParser());
 var routes = require('./routes/index')
 
 var io = require('socket.io').listen(app.listen(port, function(){
-  console.log("listening on MOFUKKKAAAA " + port);
+  console.log("listening on Port:  " + port);
 }))
 
 // var server = require('http').createServer(app);
@@ -39,17 +38,13 @@ app.use('/api/events', routes.events)
 app.use('/users', routes.users);
 app.use('/', routes.main);
 
-
-
-
-
 // *** MAKE POST REQUEST HANDLES CREATE EVENT
 
-function mainBlogPost(articles, comments) {
-    let newArray = []
-    newArray.push(articles);
-    newArray.push(comments);
-    return newArray;
-}
+// function mainBlogPost(articles, comments) {
+//     let newArray = []
+//     newArray.push(articles);
+//     newArray.push(comments);
+//     return newArray;
+// }
 
 module.exports = app;

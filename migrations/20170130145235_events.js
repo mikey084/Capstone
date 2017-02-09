@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.text('description').notNullable().defaultTo('');
     table.string('address').notNullable().defaultTo('');
     table.dateTime('datetime').notNullable();
+    table.string('genre').notNullable();
   })
 };
 

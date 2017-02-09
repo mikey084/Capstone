@@ -28,3 +28,18 @@ footer {
   left: 0;
   padding: 1rem;
 }
+#dropdowndiv {
+  background-color: gainsboro;
+}
+#main-color {
+  height: 100%;
+  width: 100%;
+  background-color: gainsboro;
+}
+#title {
+  text-align: center;
+  color: gainsboro;
+}
+#body {
+  background-color: gainsboro;
+}

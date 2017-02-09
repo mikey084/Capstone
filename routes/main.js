@@ -5,14 +5,24 @@ var AppearIn = require("appearin-sdk");
 //dateTime function
 
 
-
+var name;
+var title;
 router.get('/events/:id', function(req, res){
+  var id = req.params.id;
+  console.log(id, "id HERE");
+  knex('events').where('id',id).then(function(data){
+    name = data[0].name;
+    title = data[0].title;
+  })
+  .catch(function(err){
+    console.log(err);
+  })
   if(!req.cookies){
     res.redirect('/users/login');
   }
   var params = req.params.id;
   if (params){
-    res.render('../views/joinEvent', {id: req.params.id});
+    res.render('../views/joinEvent', {id: id, name: name, title:title});
   }
 });
 
@@ -52,14 +62,14 @@ router.get('/main', function(req, res, next) {
 router.post('/newEvent', function(req, res) {
     var body = req.body
     console.log(body);
-    knex('events').returning('*').insert({name: body.name, occupation: body.occupation, title: body.title, description: body.description, address: body.address, datetime:body.date}).then(function(data) {
+    knex('events').returning('*').insert({name: body.name, occupation: body.occupation, title: body.title, description: body.description, address: body.address, datetime:body.date, genre: body.genre}).then(function(data) {
         var id = data.id;
         console.log(data, "this is returned data");
-        console.log(data[0].id, "this is event id ");
-        console.log(data, "Post database data ");
-        console.log(typeof data[0].datetime, "type of")
-        console.log(data[0].datetime, " WRONG DATE");
-        console.log(convertUTCDateToLocalDate(data[0].datetime), "THE CORRECT DATE");
+        // console.log(data[0].id, "this is event id ");
+        // console.log(data, "Post database data ");
+        // console.log(typeof data[0].datetime, "type of")
+        // console.log(data[0].datetime, " WRONG DATE");
+        // console.log(convertUTCDateToLocalDate(data[0].datetime), "THE CORRECT DATE");
         // data.forEach(function(elem){
         //   convertUTCDateToLocalDate(elem.datetime);
         // })

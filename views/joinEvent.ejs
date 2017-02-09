@@ -13,16 +13,17 @@
     <meta content="stuff, to, help, search, engines, not" name="keywords">
     <meta content="What this page is about." name="description">
     <meta content="Display Webcam Stream" name="title">
-
     </head>
       <body style ='background-color: cornsilk;'>
         <nav>
           <div class="nav-wrapper" style = 'background-color: teal;'>
-            <a href="#" class="brand-logo">LEARN</a>
+            <a href="/main" class="brand-logo" style = 'margin-left: 40px;'>Main</a>
+            <a href="/main" class="brand-logo" style = 'margin-left: 575px;'><%=name%> : <%=title%>  </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="http://localhost:3000/createevent">Create Event</a></li>
               <li><a href="http://localhost:3000/filtered">Today's Events</a></li>
-              <li>  <form action="/users/logout" method="post">
+              <li>
+                <form action="/users/logout" method="post">
                   <input type="submit" name="" value="logout"  style = 'width: 150px; height: 50px; margin-bottom: 10px; border: none; background-color:teal;font-size: 20px;'>
                 </form></li>
             </ul>
@@ -32,13 +33,13 @@
         <div class = 'row'>
           <div class = 'col s6'>
           <div name = "video-room" id = "video-box" style = 'margin-left: 50px;'>
-            <iframe src="https://appear.in/mikey084/<%=id%>" width="800" height="620" frameborder="0" style = 'margin-top: 25px;'>
+            <iframe src="https://appear.in/mikey084/<%=id%>" width="800" height="620"  frameborder="0" style = 'margin-top: 25px;border-radius:20px;'>
             </iframe>
           </div>
           </div>
           <div  id = "chatbox-container" class = 'col s6' style = "margin-top: 100px;">
             <div name = "chatbox" id ='chatbox' >
-            <div id="content" style="width: 500px; height: 400px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;border-radius: 25px; font-size: 20px; padding: 20px;border:1px solid;border-color: rgba(0,0,0,.15); position:relative; ">
+            <div id="content" style="width: 500px; height: 400px; margin: 0 0 20px 0; border: 3px solid #cccccc; overflow-y: scroll;border-radius: 25px; font-size: 20px; padding: 20px;border:1px solid;border-color:teal; position:relative; ">
             </div>
             </div>
             <div class="controls" >Name:
@@ -55,26 +56,12 @@
         <div class="col l6 s12">
           <h5 class="white-text"></h5>
           <p class="grey-text text-lighten-4"></p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text"></h5>
-          <!-- <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul> -->
         </div>
         <div class="col l3 s12">
           <h5 class="white-text"></h5>
-          <!-- <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul> -->
         </div>
       </div>
     </div>

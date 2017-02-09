@@ -26,7 +26,7 @@ class Event {
     var biggestContainerDiv = document.getElementById('containerDiv');
     var containerDiv = document.createElement('div')
     containerDiv.setAttribute('class', 'card');
-    containerDiv.setAttribute('style', 'width:365px;height:515px; background-color: white;')
+    containerDiv.setAttribute('style', 'width:365px;height:515px; background-color: gainsboro;')
 
 
 
@@ -89,6 +89,7 @@ class Event {
     //sets p content
     pTagReveal.innerHTML = this.description;
     spanReveal.innerHTML = this.title + ":"
+    pTagReveal.setAttribute('style', 'font-size:20px;')
     iTagReveal.setAttribute('style', 'width:30px;height30px;')
     divCardReveal.setAttribute('class', 'card-reveal');
     divCardReveal.setAttribute('style', 'background-color: gainsboro;')

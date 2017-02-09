@@ -4,26 +4,23 @@ const knex = require('../knex');
 var AppearIn = require("appearin-sdk");
 //dateTime function
 
-
-var name;
-var title;
-router.get('/events/:id', function(req, res){
-  var id = req.params.id;
-  console.log(id, "id HERE");
-  knex('events').where('id',id).then(function(data){
-    name = data[0].name;
-    title = data[0].title;
-  })
-  .catch(function(err){
-    console.log(err);
-  })
-  if(!req.cookies){
-    res.redirect('/users/login');
-  }
-  var params = req.params.id;
-  if (params){
-    res.render('../views/joinEvent', {id: id, name: name, title:title});
-  }
+router.get('/events/:id', function(req, res) {
+    var id = req.params.id;
+    console.log(id, "id HERE");
+    knex('events').where('id', id)
+    .then(function(data) {
+    var name = data[0].name;
+    var title = data[0].title;
+    if (!req.cookies) {
+      res.redirect('/users/login');
+    }
+    else {
+      console.log("HELLO HITTING IF STATEMENT");
+      res.render('../views/joinEvent', {id: id, name: name,title: title});
+    }
+    }).catch(function(err) {
+        console.log(err);
+      })
 });
 
 router.get('/createevent', function(req, res) {
@@ -31,28 +28,32 @@ router.get('/createevent', function(req, res) {
 })
 
 //need filter function
-router.get('/filtered', function(req, res, next){
-  knex('events').then(function(data){
+router.get('/filtered', function(req, res, next) {
+    knex('events').then(function(data) {
 
-
-    if (req.cookies.id) {
-      res.render('../views/mainfiltered', {data: data, cookies: req.cookies.name})
-    }
-    else{
-      res.render('/login')
-    }
-  }).catch(function(err) {
-    console.log(err);
-  })
+        if (req.cookies.id) {
+            res.render('../views/mainfiltered', {
+                data: data,
+                cookies: req.cookies.name
+            })
+        } else {
+            res.render('/login')
+        }
+    }).catch(function(err) {
+        console.log(err);
+    })
 })
 router.get('/main', function(req, res, next) {
     console.log(req.cookies, "Cookies exist!");
     knex('events').then(function(data) {
         if (req.cookies.id) {
 
-          res.render('../views/main', {data: data, cookies: req.cookies.name})
-        }else{
-          res.render('/login')
+            res.render('../views/main', {
+                data: data,
+                cookies: req.cookies.name
+            })
+        } else {
+            res.render('/login')
         }
     }).catch(function(err) {
         console.log(err);
@@ -62,7 +63,15 @@ router.get('/main', function(req, res, next) {
 router.post('/newEvent', function(req, res) {
     var body = req.body
     console.log(body);
-    knex('events').returning('*').insert({name: body.name, occupation: body.occupation, title: body.title, description: body.description, address: body.address, datetime:body.date, genre: body.genre}).then(function(data) {
+    knex('events').returning('*').insert({
+        name: body.name,
+        occupation: body.occupation,
+        title: body.title,
+        description: body.description,
+        address: body.address,
+        datetime: body.date,
+        genre: body.genre
+    }).then(function(data) {
         var id = data.id;
         console.log(data, "this is returned data");
         // console.log(data[0].id, "this is event id ");
@@ -74,22 +83,21 @@ router.post('/newEvent', function(req, res) {
         //   convertUTCDateToLocalDate(elem.datetime);
         // })
         // console.log(data);
-        res.redirect("/Events/"  + data[0].id);
+        res.redirect("/Events/" + data[0].id);
     }).catch(function(err) {
         console.log(err);
     })
 })
 
 function convertUTCDateToLocalDate(date) {
-  var newDate = new Date(date.getTime()-date.getTimezoneOffset()*60*1000);
+    var newDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
 
-  var offset = date.getTimezoneOffset() / 60;
-  var hours = date.getHours();
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
 
-  newDate.setHours(hours - offset);
+    newDate.setHours(hours - offset);
 
-  return newDate;
+    return newDate;
 }
-
 
 module.exports = router;

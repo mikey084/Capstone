@@ -29,17 +29,19 @@ footer {
   padding: 1rem;
 }
 #dropdowndiv {
-  background-color: gainsboro;
+  background-color: cornsilk;
 }
 #main-color {
   height: 100%;
   width: 100%;
-  background-color: gainsboro;
 }
 #title {
   text-align: center;
   color: gainsboro;
 }
 #body {
-  background-color: gainsboro;
+  background-color: cornsilk;
+}
+#join-event-background {
+  background-color: cornsilk;
 }

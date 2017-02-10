@@ -34,6 +34,10 @@ io.sockets.on('connection', function(socket){
   })
 })
 
+
+app.get('/', function(req, res){
+  res.redirect('/main');
+})
 app.use('/api/events', routes.events)
 app.use('/users', routes.users);
 app.use('/', routes.main);

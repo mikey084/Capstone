@@ -37,7 +37,7 @@ router.get('/filtered', function(req, res, next) {
                 cookies: req.cookies.name
             })
         } else {
-            res.render('/login')
+            res.redirect('/users/login')
         }
     }).catch(function(err) {
         console.log(err);
@@ -53,7 +53,7 @@ router.get('/main', function(req, res, next) {
                 cookies: req.cookies.name
             })
         } else {
-            res.render('/login')
+            res.redirect('/users/login')
         }
     }).catch(function(err) {
         console.log(err);

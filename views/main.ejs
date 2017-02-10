@@ -12,11 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   </head>
-  <body id= "body">
-    <nav>
+  <body id = 'body' >
+    <nav id = 'nav-border'>
       <div class="nav-wrapper" style = 'background-color: teal;'>
-        <a href="/main" class="brand-logo">Main</a>
+        <a href="/main" class="brand-logo" style = 'margin-left: 40px;'>Main</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+
           <li><a href="http://localhost:3000/createevent">Create Event</a></li>
           <li><a href="http://localhost:3000/filtered">Today's Events</a></li>
           <li>  <form action="/users/logout" method="post">
@@ -25,9 +26,11 @@
         </ul>
       </div>
     </nav>
-    <div id = 'dropdowndiv'>
-    <div style = "width:215px;">
-    <select name="genre" id="dropdown" class="browser-default">
+
+    <div id = 'dropdowndiv' style = 'flex-direction:row; ' >
+      <span>FILTER BY</span>
+    <div style = "width:215px; ">
+    <select name="genre" id="dropdown" class="browser-default" style = "background-color: cornsilk; border-color: teal; margin-bottom : 10px;">
       <option value="computer science">Computer Science</option>
       <option value="cooking">Cooking</option>
       <option value="music">Music</option>
@@ -35,7 +38,6 @@
       <option value="networking">Networking</option>
       <option value="wellness">Wellness</option>
       <option value="other">Other</option>
-
     </select>
     </div>
     </div>
@@ -45,7 +47,7 @@
     </div>
 
     <div id= 'main-color'>
-      <div name= 'background-color-container' style = 'height: 100%; width: 100%;display:flex; ' >
+      <div name= 'background-color-container' style = 'height: 100%; width: 100%;display:flex; '>
 
 
         <div id= "containerDiv" class = 'media-grid' style = "display:flex;flex-wrap:wrap;justify-content:space-between; position: relative; margin-left: 30px;" >

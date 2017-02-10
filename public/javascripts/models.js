@@ -21,30 +21,15 @@ class Event {
     this.time = config.datetime;
   }
   render(){
-    // <iframe src="https://appear.in/mikey084" width="800" height="640" frameborder="0"></iframe>
-    // var time = shave(this.time);
     var biggestContainerDiv = document.getElementById('containerDiv');
     var containerDiv = document.createElement('div')
     containerDiv.setAttribute('class', 'card');
-    containerDiv.setAttribute('style', 'width:365px;height:515px; background-color: gainsboro;')
-
-
-
-
+    containerDiv.setAttribute('style', 'img:hover -webkit-filter: brightness(150%); ')
+    containerDiv.setAttribute('style', 'width:365px;height:515px; background-image: url(woodbackground.jpg);')
     var imgTag = document.createElement('img');
     var divImg = document.createElement('div');
     var videoBox = document.getElementById('video-box');
-    //creating Iframe tag
-    // var iFrameTag = document.createElement('iframe');
-    // iFrameTag.setAttribute('src', "https://appear/in/mikey084" + "/" + this.id);
-    // iFrameTag.setAttribute('style', 'width:800px; height: 640px;');
-    // iFrameTag.setAttribute('frameborder', "0");
-    // console.log(iFrameTag, "I am i frameTAg");
-    // console.log(videoBox, "I am i so boxy");
-    //
-    // videoBox.appendChild(iFrameTag);
-
-    // create card image
+    
     imgTag.setAttribute('class', 'activator');
     imgTag.setAttribute('src', this.imageurl)
     imgTag.setAttribute('style', 'width: 100%; height:245px' )
@@ -92,7 +77,7 @@ class Event {
     pTagReveal.setAttribute('style', 'font-size:20px;')
     iTagReveal.setAttribute('style', 'width:30px;height30px;')
     divCardReveal.setAttribute('class', 'card-reveal');
-    divCardReveal.setAttribute('style', 'background-color: gainsboro;')
+    divCardReveal.setAttribute('style', 'background-image: url(woodbackground.jpg);')
     spanReveal.setAttribute('class', 'card-title grey-text text-darken-4')
     iTagReveal.setAttribute('class', 'material-icons right')
 

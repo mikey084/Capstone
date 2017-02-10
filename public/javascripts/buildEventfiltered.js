@@ -54,6 +54,30 @@ function filterDate(string){
   return true;
 }
 
+var dropdown = document.getElementById('dropdown');
+dropdown.addEventListener('change', function(){
+  var container = document.getElementById("containerDiv");
+  container.innerHTML = ''
+  console.log(dropdown.value);
+  fetch('http://localhost:3000/api/events/' + dropdown.value, {method: 'get'}).then(function(data) {
+      data.json().then(function(data2) {
+      console.log(data2, "RLFORLFOFFL");
+      console.log(typeof data2[0].datetime, "I AM THE DATETIME");
+
+
+      data2.forEach(function(elem){
+        console.log(elem, "HAHAHA");
+        elem.datetime = new Date(elem.datetime)
+        console.log(typeof elem.datetime, "HELOO");
+        var event = new Event(elem)
+        event.render();
+      })
+    })
+  }).catch(function(err) {
+      console.log(err);
+  })
+})
+
 
 
 

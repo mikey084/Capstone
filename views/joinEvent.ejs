@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id = "html">
   <head>
     <title>Real time web chat</title>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
@@ -14,11 +14,11 @@
     <meta content="What this page is about." name="description">
     <meta content="Display Webcam Stream" name="title">
     </head>
-      <body id = 'join-event-background'>
+      <body  >
         <nav>
-          <div class="nav-wrapper" style = 'background-color: teal;'>
+          <div class="nav-wrapper" style = 'background-color: teal; border-color:cornsilk; border-style: solid; border-width:.15em;'>
             <a href="/main" class="brand-logo" style = 'margin-left: 40px;'>Main</a>
-            <a href="/main" class="brand-logo" style = 'margin-left: 575px;'><%=name%> : <%=title%>  </a>
+            <a href="/main" class="brand-logo" style = 'margin-left: 575px;' id = 'event-title'><%=name%> : <%=title%>  </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="http://localhost:3000/createevent">Create Event</a></li>
               <li><a href="http://localhost:3000/filtered">Today's Events</a></li>
@@ -39,7 +39,7 @@
           </div>
           <div  id = "chatbox-container" class = 'col s6' style = "margin-top: 100px;">
             <div name = "chatbox" id ='chatbox' >
-            <div id="content" style="width: 500px; height: 400px; margin: 0 0 20px 0; border: 3px solid #cccccc; overflow-y: scroll;border-radius: 25px; font-size: 20px; padding: 20px;border:1px solid;border-color:teal; position:relative; ">
+            <div id="content">
             </div>
             </div>
             <div class="controls" >Name:
@@ -50,7 +50,7 @@
           </div>
         </div>
     </body>
-  <footer class="page-footer teal" style = 'margin-top: 99px'>
+  <footer id = 'footer'class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

@@ -2,8 +2,17 @@ footer {
   position: fixed;
   width: 100%;
 }
-
-
+#align-chat-video {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end space-between;
+}
+#left-side-video {
+  min-width: 600px;
+}
+#right-side-video {
+  min-width: 600px;
+}
 #content {
   width: 500px;
   height: 400px;
@@ -45,7 +54,7 @@ footer {
 #title {
   text-align: center;
   color: lavender;
-  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 #body {
   background-color: cornsilk;

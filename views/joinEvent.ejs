@@ -31,14 +31,15 @@
           </div>
         </nav>
         <h1></h1>
-        <div class = 'row'>
-          <div class = 'col s6' style = 'float: left;'>
+        <div id= 'align-chat-video'>
+
+          <div id = 'left-side-video'>
           <div name = "video-room" id = "video-box" style = 'margin-left: 50px;position:fixed; position:relative;'>
             <iframe src="https://appear.in/mikey084/<%=id%>" width="800" height="620"  frameborder="0" style = 'margin-top: 25px;border-radius:20px;'>
             </iframe>
           </div>
           </div>
-          <div  id = "chatbox-container" class = 'col s6' style = "margin-top: 100px; float: left; position: relative;">
+          <div id = 'right-side-chat'>
             <div name = "chatbox" id ='chatbox' >
             <div id="content">
             </div>
@@ -48,7 +49,7 @@
               <input id="field" style="width:200px;" type="text" name="message">
               <input id="send" type="button" value="send" class ="waves-effect waves-light btn" style= "margin-bottom:25px;">
             </div>
-          </div>
+        </div>
         </div>
     </body>
   <footer id = 'footer'class="page-footer teal">

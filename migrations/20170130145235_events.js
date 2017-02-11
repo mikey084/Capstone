@@ -10,6 +10,8 @@ exports.up = function(knex, Promise) {
     table.string('address').notNullable().defaultTo('');
     table.dateTime('datetime').notNullable();
     table.string('genre').notNullable();
+    table.integer('ownerUserId').notNullable();
+    table.foreign('ownerUserId').references('id').inTable('users');
   })
 };
 

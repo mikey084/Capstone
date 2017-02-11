@@ -4,24 +4,49 @@ const knex = require('../knex');
 var AppearIn = require("appearin-sdk");
 //dateTime function
 
+
+
 router.get('/events/:id', function(req, res) {
     var id = req.params.id;
-    console.log(id, "id HERE");
-    knex('events').where('id', id)
-    .then(function(data) {
-    var name = data[0].name;
-    var title = data[0].title;
-    if (!req.cookies) {
-      res.redirect('/users/login');
-    }
-    else {
-      console.log("HELLO HITTING IF STATEMENT");
-      res.render('../views/joinEvent', {id: id, name: name,title: title});
-    }
-    }).catch(function(err) {
-        console.log(err);
-      })
+    console.log("hELLOSAKJDHAKJF");
+    knex('events').where('events.id', id).leftJoin('users', function(){
+      this.on('users.id', '=', 'events.ownerUserId')
+    })
+    .then(function(data){
+      console.log(data, "joined table succecss");
+      var name = data[0].name;
+      var title = data[0].title;
+      var email = data[0].email;
+      if(!req.cookies){
+        res.redirect('/users/login');
+      }
+      else{
+        res.render('../views/joinEvent', {id: id, name: name,title:title, email: email})
+      }
+    }).catch(function(err){
+      console.log(err);
+    })
+    // var id = req.params.id;
+    // console.log(id, "id HERE");
+    // knex('events').where('id', id)
+    // .then(function(data) {
+    //   console.log(data, "THIS IS knex returned data");
+    //   var name = data[0].name;
+    //   var title = data[0].title;
+    //   var ownerUserId = data[0].ownerUserId;
+    //   return knex('users').where('id', ownerUserId);
+    //   if (!req.cookies) {
+    //     res.redirect('/users/login');
+    //   }
+    //   else {
+    //     console.log("HELLO HITTING IF STATEMENT");
+    //     res.render('../views/joinEvent', {id: id, name: name,title: title});
+    //   }
+    // }).catch(function(err) {
+    //     console.log(err);
+    //   })
 });
+
 
 router.get('/createevent', function(req, res) {
     res.render('../views/create-event');

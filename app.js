@@ -35,6 +35,10 @@ var io = require('socket.io').listen(app.listen(port, function(){
   console.log("listening on Port:  " + port);
 }))
 
+io.configure(function () {
+    io.set("transports", ["xhr-polling"]);
+    io.set("polling duration", 10);
+});
 // var server = require('http').createServer(app);
 
 app.use(express.static(__dirname + '/bower_components'));

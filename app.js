@@ -6,9 +6,10 @@ const bodyParser = require('body-parser');
 const knex = require('./knex');
 const cookieParser = require('cookie-parser');
 const app = express();
-const server = app.listen(port, function(){
-    console.log("listening on Port:  " + port);
-});
+const server = require('http').createServer(app)
+var io = require('socket.io')
+io = io.listen(server);
+server.listen(port);
 // ## CORS middleware
 // For more info see: https://gist.github.com/cuppster/2344435
 //
@@ -34,7 +35,6 @@ app.use(cookieParser());
 var routes = require('./routes/index')
 
 
-var io = require('socket.io')(server);
 
 
 

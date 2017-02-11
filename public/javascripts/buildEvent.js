@@ -4,7 +4,7 @@ window.onload = function (){
 
 var eventJson;
 //FILTER HERE
-fetch('https://secret-peak-93084.herokuapp.com/api/events', {method: 'get'}).then(function(data) {
+fetch('/api/events', {method: 'get'}).then(function(data) {
     data.json().then(function(data2) {
     console.log(data2, "RLFORLFOFFL");
     // console.log(data2, "DATA 2  ");
@@ -44,7 +44,7 @@ dropdown.addEventListener('change', function(){
   var container = document.getElementById("containerDiv");
   container.innerHTML = ''
   console.log(dropdown.value);
-  fetch('https://secret-peak-93084.herokuapp.com/api/events/' + dropdown.value, {method: 'get'}).then(function(data) {
+  fetch('/api/events' +"/"+ dropdown.value, {method: 'get'}).then(function(data) {
       data.json().then(function(data2) {
       console.log(data2, "RLFORLFOFFL");
       console.log(typeof data2[0].datetime, "I AM THE DATETIME");

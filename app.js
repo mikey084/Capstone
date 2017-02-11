@@ -1,11 +1,14 @@
 "use strict";
 const express = require('express');
-const app = express();
+
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const knex = require('./knex');
 const cookieParser = require('cookie-parser');
-
+const app = express();
+const server = app.listen(port, function(){
+    console.log("listening on Port:  " + port);
+});
 // ## CORS middleware
 // For more info see: https://gist.github.com/cuppster/2344435
 //
@@ -31,9 +34,8 @@ app.use(cookieParser());
 var routes = require('./routes/index')
 
 
-var io = require('socket.io').listen(app.listen(port, function(){
-  console.log("listening on Port:  " + port);
-}))
+var io = require('socket.io')(server);
+
 
 
 // var server = require('http').createServer(app);

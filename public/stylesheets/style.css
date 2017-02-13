@@ -20,6 +20,9 @@ footer {
   min-width: 600px;
 
 }
+#chatbox {
+  margin-left: 65px;
+}
 #right-side-video {
   min-width: 600px;
   margin-top: 80px;

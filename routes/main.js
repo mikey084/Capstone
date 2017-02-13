@@ -72,7 +72,7 @@ router.get('/main', function(req, res, next) {
     console.log(req.cookies, "Cookies exist!");
     knex('events').then(function(data) {
         if (req.cookies.id) {
-
+            console.log(req.cookies.id, "BLAH");
             res.render('../views/main', {
                 data: data,
                 cookies: req.cookies.name

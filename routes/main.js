@@ -87,6 +87,7 @@ router.get('/main', function(req, res, next) {
 
 router.post('/newEvent', function(req, res) {
     var body = req.body
+    var ownerUserId = req.cookies.id;
     console.log(body);
     knex('events').returning('*').insert({
         name: body.name,
@@ -96,6 +97,7 @@ router.post('/newEvent', function(req, res) {
         address: body.address,
         datetime: body.date,
         genre: body.genre
+        ownerUserId: ownerUserId
     }).then(function(data) {
         var id = data.id;
         console.log(data, "this is returned data");

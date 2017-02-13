@@ -22,6 +22,7 @@ class Event {
   }
   render(){
     var biggestContainerDiv = document.getElementById('containerDiv');
+    
     var containerDiv = document.createElement('div')
     containerDiv.setAttribute('class', 'card');
     containerDiv.setAttribute('style', 'img:hover -webkit-filter: brightness(150%); ')

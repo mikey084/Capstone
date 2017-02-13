@@ -15,6 +15,7 @@ fetch('/api/events', {method: 'get'}).then(function(data) {
 
     newArray.forEach(function(elem){
       console.log(elem);
+      elem.datetime = new Date(elem.datetime)
       var event = new Event(elem)
       event.render();
     })

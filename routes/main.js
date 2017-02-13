@@ -96,7 +96,7 @@ router.post('/newEvent', function(req, res) {
         description: body.description,
         address: body.address,
         datetime: body.date,
-        genre: body.genre
+        genre: body.genre,
         ownerUserId: ownerUserId
     }).then(function(data) {
         var id = data.id;

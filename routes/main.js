@@ -90,6 +90,7 @@ router.post('/newEvent', function(req, res) {
     var ownerUserId = req.cookies.id;
     console.log(body);
     knex('events').returning('*').insert({
+        imageurl: body.imageurl,
         name: body.name,
         occupation: body.occupation,
         title: body.title,

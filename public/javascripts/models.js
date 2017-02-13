@@ -29,7 +29,7 @@ class Event {
     var imgTag = document.createElement('img');
     var divImg = document.createElement('div');
     var videoBox = document.getElementById('video-box');
-    
+
     imgTag.setAttribute('class', 'activator');
     imgTag.setAttribute('src', this.imageurl)
     imgTag.setAttribute('style', 'width: 100%; height:245px' )
@@ -56,7 +56,7 @@ class Event {
     li1.setAttribute('style', 'list-style-type: none;')
     li2.setAttribute('style', 'list-style-type: none;')
 
-    li1.innerHTML = "Occupation: " + this.occupation;
+    li1.innerHTML = this.occupation;
     li2.innerHTML = this.time;
 
     pTag.appendChild(aTag);

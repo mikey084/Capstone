@@ -21,7 +21,7 @@ router.get('/events/:id', function(req, res) {
         res.redirect('/users/login');
       }
       else{
-        res.render('../views/joinEvent', {id: id, name: name,title:title, email: email})
+        res.render('../views/joinEvent', {id: id, name: name,title:title, email: email, username: req.cookies.name})
       }
     }).catch(function(err){
       console.log(err);

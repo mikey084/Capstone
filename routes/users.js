@@ -18,7 +18,7 @@ router.post('/signup', function(req, res){
           }
           if (!req.cookies.id) {
               console.log("just gave you a cookie");
-              res.cookie('id', data[0].id, {httpOnly: true});
+              res.cookie('id', data[0].id, {httpOnly: true});          res.cookie('name', data[0].username, {httpOnly: true});
               res.redirect("/main");
           } else {
               console.log("you have a cookie");
@@ -62,6 +62,7 @@ router.post('/logout', function(req, res){
   if (req.cookies) { //Logout post request
     console.log(req.cookies);
     res.clearCookie('id');
+    res.clearCookie('name');
     console.log("i ate your cookie ;)");
     res.redirect('/users/login');
   }

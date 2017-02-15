@@ -53,6 +53,7 @@ class Event {
     aTag.setAttribute('style', 'font-size: 20px;')
     divContent.setAttribute('class', 'card-content')
     spanTag.setAttribute('class', 'card-title activator grey-text text-darken-4')
+    spanTag.setAttribute('style', 'font-weight:400;')
     iTag.setAttribute('class', "material-icons right");
     aTag.setAttribute('href', "events" + "/" + this.id.toString());
     li1.setAttribute('style', 'list-style-type: none;')
@@ -81,6 +82,7 @@ class Event {
     divCardReveal.setAttribute('class', 'card-reveal');
     divCardReveal.setAttribute('style', 'background-image: url(woodbackground.jpg);')
     spanReveal.setAttribute('class', 'card-title grey-text text-darken-4')
+    spanReveal.setAttribute('style', 'font-weight:400;')
     iTagReveal.setAttribute('class', 'material-icons right')
 
     divCardReveal.appendChild(spanReveal)

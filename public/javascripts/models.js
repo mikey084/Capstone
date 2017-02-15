@@ -22,11 +22,11 @@ class Event {
   }
   render(){
     var biggestContainerDiv = document.getElementById('containerDiv');
-    
+
     var containerDiv = document.createElement('div')
     containerDiv.setAttribute('class', 'card');
-    containerDiv.setAttribute('style', 'img:hover -webkit-filter: brightness(150%); ')
-    containerDiv.setAttribute('style', 'width:365px;height:515px; background-image: url(woodbackground.jpg);')
+    containerDiv.setAttribute('style', 'img:hover -webkit-filter: brightness(150%); border-radius:25px; ')
+    containerDiv.setAttribute('style', 'width:365px;height:515px; background-image: url(woodbackground.jpg); border-radius:25px;')
     var imgTag = document.createElement('img');
     var divImg = document.createElement('div');
     var videoBox = document.getElementById('video-box');
@@ -35,6 +35,7 @@ class Event {
     imgTag.setAttribute('src', this.imageurl)
     imgTag.setAttribute('style', 'width: 100%; height:245px' )
     divImg.setAttribute('class', 'card-image waves-effect waves-block waves-light');
+    divImg.setAttribute('style', 'border-radius: 25px;');
 
     divImg.appendChild(imgTag);
     //create card content
